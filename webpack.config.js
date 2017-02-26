@@ -20,7 +20,7 @@ module.exports = [{
     styles: './app/styles.scss'
   },
   output: {
-    filename: 'styles.css',
+    filename: '[name].css',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
