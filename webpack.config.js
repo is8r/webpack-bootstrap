@@ -4,9 +4,11 @@ var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = [{
-  entry: './app/index.js',
+  entry: {
+    scripts: './app/scripts.js'
+  },
   output: {
-    filename: 'scripts.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
   devServer: {
@@ -14,14 +16,8 @@ module.exports = [{
     port: 8080
   }
 }, {
-  entry: './app/index.js',
-  output: {
-    filename: 'scripts.js',
-    path: path.resolve(__dirname, 'dist')
-  }
-}, {
   entry: {
-    style: './app/styles.scss'
+    styles: './app/styles.scss'
   },
   output: {
     filename: 'styles.css',
@@ -48,6 +44,6 @@ module.exports = [{
         ]
       }
     }),
-    new ExtractTextPlugin({ filename: '[name]s.css', disable: false, allChunks: true })
+    new ExtractTextPlugin({ filename: '[name].css', disable: false, allChunks: true })
   ]
 }];

@@ -1,11 +1,11 @@
-@mixin breakpoint-down($name: md, $breakpoints: $media-breakpoints) {
+@mixin breakpoint-down($name: md, $breakpoints: $grids-breakpoints) {
   $map: map-get($breakpoints, $name);
   @media (max-width: $map) {
     @content;
   }
 }
 
-@mixin breakpoint-up($name: md, $breakpoints: $media-breakpoints) {
+@mixin breakpoint-up($name: md, $breakpoints: $grids-breakpoints) {
   $map: map-get($breakpoints, $name);
   @media (min-width: $map) {
     @content;
