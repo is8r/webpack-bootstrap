@@ -1,3 +1,4 @@
+// breakpoints
 @mixin breakpoint-down($name: md, $breakpoints: $grids-breakpoints) {
   $map: map-get($breakpoints, $name);
   @media (max-width: $map) {
@@ -12,6 +13,7 @@
   }
 }
 
+// utils
 @mixin hide-text {
   overflow: hidden;
   &:before {

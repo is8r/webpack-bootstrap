@@ -5,9 +5,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack --config webpack.config.js"
+  "repository": {
+    "type": "git",
+    "url": ""
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
@@ -23,8 +23,8 @@
     "lodash": "^4.17.4",
     "webpack-dev-server": "^2.3.0"
   },
-  "repository": {
-    "type": "git",
-    "url": ""
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack --config webpack.config.js"
   }
 }
