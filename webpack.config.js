@@ -3,15 +3,15 @@ var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-var dir = './app';
+var app = './app';
 var dist = './dist';
 module.exports = [{
   entry: {
-    scripts: dir+'/javascripts/scripts.js'
+    scripts: app+'/javascripts/scripts.js'
   },
   output: {
     filename: 'javascripts/[name].js',
-    path: __dirname + dist
+    path: __dirname + '/' + dist
   },
   devServer: {
     contentBase: dist,
@@ -19,11 +19,11 @@ module.exports = [{
   }
 }, {
   entry: {
-    styles: dir+'/stylesheets/styles.scss'
+    styles: app+'/stylesheets/styles.scss'
   },
   output: {
     filename: 'stylesheets/[name].css',
-    path: __dirname + dist
+    path: __dirname + '/' + dist
   },
   module: {
     rules: [
