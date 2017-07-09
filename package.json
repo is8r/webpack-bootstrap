@@ -16,6 +16,7 @@
     "node-sass": "^4.5.0",
     "postcss-loader": "^1.3.0",
     "sass-loader": "^6.0.0",
+    "spuit": "0.0.7",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
   },
@@ -25,6 +26,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "deploy": "webpack --config webpack.config.js && node deploy"
   }
 }
