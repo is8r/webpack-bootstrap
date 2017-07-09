@@ -1,0 +1,30 @@
+/*
+example:
+@include font-face('fontello', 'fontello/fontello');
+@mixin font-fontello($size: 1rem, $line-height: normal, $weight: normal) {
+  font-family: 'fontello';
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+*/
+/*
+from: https://github.com/twbs/bootstrap/blob/v4-dev/scss/utilities/_spacing.scss
+*/
+/*
+from: https://github.com/twbs/bootstrap/blob/v4-dev/
+*/
+/*
+necessary:
+@include include-fa;
+@include include-animations;
+*/
+html {
+  font-size: 100%; }
+  @media (max-width: 48em) {
+    html {
+      font-size: 80%; } }
+
+body {
+  color: #555;
+  background: #f2f2f2; }

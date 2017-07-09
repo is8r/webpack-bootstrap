@@ -66,4 +66,4 @@ typings/
 
 
 .tmp/
-ftp.json
+deploy.json
