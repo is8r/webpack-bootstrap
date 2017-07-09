@@ -13,3 +13,21 @@ build:
 ```
 $ npm run build
 ```
+
+deploy:
+
+deploy.json
+
+```
+{
+  "host": HOST,
+  "port": PORT,
+  "username": USERNAME,
+  "password": PASSWORD,
+  "remoteRoot": REMOTE_ROOT
+}
+```
+
+```
+$ npm run deploy
+```
