@@ -1,4 +1,4 @@
-# webpack2 + postcss + autoprefixer + bootstrap4
+# webpack3 + postcss + autoprefixer + bootstrap4
 
 watch:
 
