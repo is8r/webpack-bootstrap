@@ -1,4 +1,6 @@
-import _ from 'lodash';
+// import _ from 'lodash';
+//
+// var element = document.getElementById('output');
+// element.innerHTML = _.join(['Hello','webpack'], ' ');
 
-var element = document.getElementById('output');
-element.innerHTML = _.join(['Hello','webpack'], ' ');
+console.log("test");
