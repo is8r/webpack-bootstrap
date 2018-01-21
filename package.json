@@ -11,10 +11,11 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.2.3",
+    "bootstrap": "^4.0.0",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
     "node-sass": "^4.7.2",
-    "postcss-loader": "^2.0.9",
+    "postcss-loader": "^2.0.10",
     "sass-loader": "^6.0.6",
     "spuit": "0.0.9",
     "style-loader": "^0.19.1",
