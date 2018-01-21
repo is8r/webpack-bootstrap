@@ -19,7 +19,7 @@ module.exports = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader'
+          use: ['css-loader', 'postcss-loader']
         })
       },
       {
@@ -36,6 +36,7 @@ module.exports = {
     ]
   },
   plugins: [
+    require('autoprefixer'),
     new ExtractTextPlugin('stylesheets/[name].css')
   ]
 }
