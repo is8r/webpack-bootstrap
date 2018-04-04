@@ -1,6 +1,6 @@
-// import _ from 'lodash';
-//
-// var element = document.getElementById('output');
-// element.innerHTML = _.join(['Hello','webpack'], ' ');
+import $ from 'jquery';
+import 'bootstrap';
 
-console.log("test");
+$(function() {
+  console.log("ready");
+});

@@ -14,7 +14,10 @@
     "bootstrap": "^4.0.0",
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "jquery": "^3.3.1",
     "node-sass": "^4.7.2",
+    "popper": "^1.0.1",
+    "popper.js": "^1.14.3",
     "postcss-loader": "^2.0.10",
     "sass-loader": "^6.0.6",
     "spuit": "0.0.10",
@@ -25,9 +28,8 @@
     "webpack-manifest-plugin": "^2.0.0-rc.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "watch": "webpack --watch --mode development",
-    "build": "webpack --mode production",
-    "deploy": "webpack --mode production --config webpack.config.js && node deploy"
+    "start": "open http://localhost:8080/ && webpack-dev-server --mode development --config webpack/webpack.config.js",
+    "watch": "webpack --watch --mode development --config webpack/webpack.config.js",
+    "build": "webpack --mode production --config webpack/webpack.config.js"
   }
 }

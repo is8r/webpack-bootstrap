@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 let app = './app';
-let dist = './dist';
+let dist = '../dist';
 
 module.exports = {
   entry: {
@@ -13,7 +13,7 @@ module.exports = {
     path: __dirname + '/' + dist
   },
   devServer: {
-    contentBase: dist,
+    contentBase: './dist',
     port: 8080
   }
 };
