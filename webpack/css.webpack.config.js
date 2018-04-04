@@ -14,7 +14,7 @@ module.exports = {
     path: __dirname + '/' + dist
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
