@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 let app = './app';
 let dist = '../dist';
@@ -15,5 +16,9 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     port: 8080
-  }
+  },
+  plugins: [
+    new UglifyJsPlugin()
+  ],
+  cache: true
 };

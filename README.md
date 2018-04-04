@@ -1,10 +1,16 @@
 # webpack4 + postcss + autoprefixer + bootstrap4
 
-watch:
+with server:
 
 ```
 $ yarn install
 $ npm run start
+```
+
+watch only:
+
+```
+$ npm run watch
 ```
 
 build:
