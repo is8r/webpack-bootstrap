@@ -4,7 +4,10 @@ with server:
 
 ```
 $ yarn install
-$ npm run start
+```
+
+```
+$ npm run dev
 ```
 
 watch only:
