@@ -30,8 +30,7 @@
     "webpack-manifest-plugin": "^2.0.0-rc.2"
   },
   "scripts": {
-    "open": "open http://localhost:8080/",
-    "dev": "webpack-dev-server --progress --mode development --config webpack/webpack.config.js",
+    "dev": "open http://localhost:8080/ && webpack-dev-server --progress --mode development --config webpack/webpack.config.js",
     "watch": "webpack --watch --progress --mode development --config webpack/webpack.config.js",
     "build": "webpack --progress --mode production --config webpack/webpack.config.js"
   }
