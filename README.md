@@ -3,7 +3,7 @@
 with server:
 
 ```
-$ yarn install
+$ yarn install --ignore-engines
 ```
 
 ```
