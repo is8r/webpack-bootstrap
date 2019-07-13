@@ -1,10 +1,7 @@
-const path = require('path')
-const webpack = require('webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-let app = './app';
-let dist = '../dist';
+let app = './app'
+let dist = '../dist'
 
 module.exports = {
   entry: {
@@ -19,11 +16,7 @@ module.exports = {
     port: 8080
   },
   plugins: [
-    new UglifyJsPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, '../app/html/index.ejs'),
-      minify: false
-    })
+    new UglifyJsPlugin()
   ],
   cache: true
 };

@@ -1,13 +1,14 @@
 const path = require('path')
-const webpack = require('webpack')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
+const TerserPlugin = require('terser-webpack-plugin')
 
-let app = './app';
-let dist = '../dist';
+let app = './app'
+let dist = '../dist'
 
 module.exports = {
   entry: {
-    styles: app+'/stylesheets/styles.scss'
+    styles: app + '/stylesheets/styles.scss'
   },
   output: {
     filename: 'stylesheets/[name].css',
@@ -19,14 +20,41 @@ module.exports = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader']
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: false,
+                includePaths: [path.resolve(__dirname, 'node_modules')],
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: false
+              },
+            },
+          ]
         })
       },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader?minimize', 'sass-loader']
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: false,
+              },
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: false,
+              },
+            },
+          ]
         })
       },
       {
@@ -38,5 +66,8 @@ module.exports = {
   plugins: [
     require('autoprefixer'),
     new ExtractTextPlugin('stylesheets/[name].css')
-  ]
+  ],
+  optimization: {
+    minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
+  },
 }
