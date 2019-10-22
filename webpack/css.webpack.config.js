@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 let app = './app';
 let dist = '../dist';
@@ -10,26 +10,24 @@ module.exports = {
     styles: app + '/stylesheets/styles.scss'
   },
   output: {
-    filename: 'stylesheets/[name].bundle.js',
+    filename: 'stylesheets/[name].css',
     path: __dirname + '/' + dist
   },
   module: {
-    rules: [
+    loaders: [
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader'
-        ]
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'postcss-loader']
+        })
       },
       {
         test: /\.(scss|sass)$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
-        ]
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
       },
       {
         test: /\.(png|jpg|gif|svg|woff|woff2|eot|ttf)$/,
@@ -39,8 +37,6 @@ module.exports = {
   },
   plugins: [
     require('autoprefixer'),
-    new MiniCssExtractPlugin({
-      filename: 'stylesheets/[name].css'
-    })
+    new ExtractTextPlugin('stylesheets/[name].css')
   ]
 };
