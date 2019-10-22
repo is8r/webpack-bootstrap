@@ -1,22 +1,30 @@
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const path = require('path')
+const webpack = require('webpack')
 
-let app = './app'
-let dist = '../dist'
+let app = './app';
+let dist = '../dist';
 
 module.exports = {
+  // mode: 'development',
   entry: {
-    scripts: app+'/javascripts/scripts.js'
+    scripts: app + '/javascripts/scripts.js'
   },
   output: {
     filename: 'javascripts/[name].js',
     path: __dirname + '/' + dist
   },
-  devServer: {
-    contentBase: './dist',
-    port: 8080
-  },
-  plugins: [
-    new UglifyJsPlugin()
-  ],
-  cache: true
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
+    ]
+  }
 };

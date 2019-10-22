@@ -22,26 +22,4 @@ module.exports = {
       chunksSortMode: 'dependency'
     })
   ]
-//   entry: {
-//     index: app+'/html/index.ejs'
-//   },
-//   output: {
-//     filename: '[name].html',
-//     publicPath: __dirname + '/' + dist,
-//     path: __dirname + '/' + dist
-//   },
-//   module: {
-//     rules: [{
-//       test: /\.ejs$/,
-//       loader: ExtractTextPlugin.extract({
-//         use: [
-//           'html-loader',
-//           'ejs-html-loader'
-//         ]
-//       })
-//     }]
-//   },
-//   plugins: [
-//     new ExtractTextPlugin('[name].html')
-//   ],
 }
