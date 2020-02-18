@@ -10,7 +10,7 @@ module.exports = {
     styles: app + '/stylesheets/styles.scss'
   },
   output: {
-    filename: 'stylesheets/[name].bundle.js',
+    filename: '../.chache/[name].bundle.js',
     path: __dirname + '/' + dist
   },
   module: {
