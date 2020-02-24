@@ -1,19 +1,15 @@
-# webpack4 + postcss + autoprefixer + bootstrap4
+# webpack4 + postcss + autoprefixer + bootstrap4 + vue
 
 with server:
 
 ```
-$ yarn install --ignore-engines
-```
-
-```
-$ npm run dev
+$ yarn run server
 ```
 
 watch only:
 
 ```
-$ npm run watch
+$ npm run dev
 ```
 
 build:
