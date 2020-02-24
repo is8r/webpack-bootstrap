@@ -12,7 +12,10 @@ $(function() {
 document.addEventListener('DOMContentLoaded', function() {
   var app = new Vue({
     el: "#app",
-    template: "<Hello/>",
-    components: { Hello }
+    render: h => h(Hello, {
+      attrs: {
+        message: 'hello!'
+      }
+    })
   });
 });
