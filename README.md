@@ -1,19 +1,19 @@
-# webpack4 + postcss + autoprefixer + bootstrap4 + vue
+# webpack4 + postcss + autoprefixer + bootstrap4
 
 with server:
 
 ```
-$ yarn run server
+$ yarn server
 ```
 
 watch only:
 
 ```
-$ npm run dev
+$ npm dev
 ```
 
 build:
 
 ```
-$ npm run build
+$ npm build
 ```
