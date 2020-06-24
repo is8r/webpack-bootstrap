@@ -9,11 +9,11 @@ $ yarn server
 watch only:
 
 ```
-$ npm dev
+$ yarn dev
 ```
 
 build:
 
 ```
-$ npm build
+$ yarn build
 ```
