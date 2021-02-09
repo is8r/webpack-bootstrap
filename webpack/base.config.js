@@ -19,16 +19,12 @@ module.exports = {
       {
         test: /\.(css|scss)$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
+          "style-loader",
           {
-            loader: "postcss-loader",
+            loader: "css-loader",
             options: {
-              postcssOptions: {
-                plugins: [
-                  ["autoprefixer", { grid: true }],
-                ],
-              },
+              url: false,
+              importLoaders: 2,
             },
           },
           {
