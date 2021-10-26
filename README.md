@@ -1,4 +1,4 @@
-# webpack4 + postcss + autoprefixer + bootstrap4
+# webpack5 + postcss + autoprefixer + bootstrap5
 
 with server:
 
