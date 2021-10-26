@@ -11,8 +11,9 @@ module.exports = {
     path: path.resolve(__dirname, "../dist"),
   },
   devServer: {
-    contentBase: path.join(__dirname, "../dist"),
-    watchContentBase: true,
+    static: {
+      directory: path.resolve(__dirname, "../dist"),
+    },
   },
   module: {
     rules: [
