@@ -1,11 +1,13 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts");
 
 module.exports = {
   context: path.resolve(__dirname, "../assets"),
   entry: {
-    app: ["./javascripts/index.js"],
+    scripts: ["./javascripts/index.js"],
+    styles: ["./stylesheets/styles.scss"],
   },
   output: {
     path: path.resolve(__dirname, "../dist"),
@@ -20,7 +22,7 @@ module.exports = {
       {
         test: /\.(css|scss)$/,
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
@@ -63,7 +65,11 @@ module.exports = {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin(),
+    new RemoveEmptyScriptsPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      //   filename: "[name].[chunkhash:8].css",
+    }),
     new HtmlWebpackPlugin({
       template: "./html/index.ejs",
       minify: {

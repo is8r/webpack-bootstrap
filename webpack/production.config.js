@@ -4,15 +4,13 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = merge(baseConfig, {
-  mode: 'production',
+  mode: "production",
   optimization: {
-    minimizer: [
-      new OptimizeCSSAssetsPlugin({})
-    ]
+    minimizer: [new OptimizeCSSAssetsPlugin({})],
   },
   plugins: [
     new UglifyJsPlugin({
-      uglifyOptions: { output: { comments: false } }
-    })
-  ]
+      uglifyOptions: { output: { comments: false } },
+    }),
+  ],
 });
