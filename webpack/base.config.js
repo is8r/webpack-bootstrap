@@ -11,6 +11,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "../dist"),
+    filename: "[name].[chunkhash:8].js",
   },
   devServer: {
     static: {
@@ -67,8 +68,7 @@ module.exports = {
   plugins: [
     new RemoveEmptyScriptsPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      //   filename: "[name].[chunkhash:8].css",
+      filename: "[name].[chunkhash:8].css",
     }),
     new HtmlWebpackPlugin({
       template: "./html/index.ejs",
