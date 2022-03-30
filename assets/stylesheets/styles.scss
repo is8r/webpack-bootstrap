@@ -1,5 +1,4 @@
 @import "~bootstrap/scss/bootstrap";
-@import "~spuit";
 
 @import "styles/config/variables";
 @import "styles/config/mixins";
@@ -8,7 +7,7 @@
 
 html {
   font-size: 100%;
-  @include breakpoint-down(md) {
+  @include media-breakpoint-down(md) {
     font-size: 80%;
   }
 }
