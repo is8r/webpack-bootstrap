@@ -24,8 +24,16 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              url: false,
+              url: true,
               importLoaders: 2,
+            },
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [["autoprefixer", { grid: true }]],
+              },
             },
           },
           {
@@ -36,7 +44,21 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: "babel-loader",
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"],
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        generator: {
+          filename: "images/[name][ext][query]",
+        },
+        type: "asset/resource",
       },
     ],
   },
