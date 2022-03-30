@@ -41,7 +41,9 @@
   "scripts": {
     "serve": "webpack serve --config ./webpack/develop.config.js --open",
     "dev": "webpack --config ./webpack/develop.config.js",
-    "build": "webpack --config ./webpack/production.config.js"
+    "build": "yarn run clear && yarn run copy && webpack --config ./webpack/production.config.js",
+    "clear": "node -e 'fs.rmSync(`dist`, {recursive:true, force:true})'",
+    "copy": "mkdir -p ./dist && cp -pR ./assets/static/* ./dist"
   },
   "dependencies": {}
 }

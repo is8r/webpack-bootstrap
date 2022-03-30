@@ -1,9 +1,9 @@
 # webpack5 + postcss + autoprefixer + bootstrap5
 
-with server:
+with serve:
 
 ```
-$ yarn server
+$ yarn serve
 ```
 
 watch only:

@@ -56,7 +56,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(ico|png|svg|jpe?g|gif|webp)$/i,
         generator: {
           filename: "images/[name][ext][query]",
         },
