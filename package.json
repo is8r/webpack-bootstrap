@@ -36,11 +36,13 @@
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.3.1",
     "webpack-merge": "^5.8.0",
-    "webpack-nano": "^1.1.1"
+    "webpack-nano": "^1.1.1",
+    "webpack-remove-empty-scripts": "^0.7.3"
   },
   "scripts": {
     "serve": "webpack serve --config ./webpack/develop.config.js --open",
     "dev": "webpack --config ./webpack/develop.config.js",
     "build": "webpack --config ./webpack/production.config.js"
-  }
+  },
+  "dependencies": {}
 }

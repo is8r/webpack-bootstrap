@@ -1,11 +1,13 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts");
 
 module.exports = {
   context: path.resolve(__dirname, "../assets"),
   entry: {
-    app: ["./javascripts/index.js"],
+    scripts: ["./javascripts/index.js"],
+    styles: ["./stylesheets/styles.scss"],
   },
   output: {
     path: path.resolve(__dirname, "../dist"),
@@ -20,12 +22,20 @@ module.exports = {
       {
         test: /\.(css|scss)$/,
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
-              url: false,
+              url: true,
               importLoaders: 2,
+            },
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [["autoprefixer", { grid: true }]],
+              },
             },
           },
           {
@@ -36,12 +46,30 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: "babel-loader",
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"],
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        generator: {
+          filename: "images/[name][ext][query]",
+        },
+        type: "asset/resource",
       },
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin(),
+    new RemoveEmptyScriptsPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      //   filename: "[name].[chunkhash:8].css",
+    }),
     new HtmlWebpackPlugin({
       template: "./html/index.ejs",
       minify: {
